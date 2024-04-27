@@ -1,6 +1,12 @@
-from keras.layers import LSTM, Dense, Dropout, TimeDistributed, Flatten, BatchNormalization
-from keras.layers.convolutional import Conv1D, MaxPooling1D
-from keras.models import Sequential
+# Instead of using:
+# from keras.layers import LSTM, Dense, Dropout, TimeDistributed, Flatten, BatchNormalization
+# from keras.layers.convolutional import Conv1D, MaxPooling1D
+# from keras.models import Sequential
+
+# Use:
+from tensorflow.keras.layers import LSTM, Dense, Dropout, TimeDistributed, Flatten, BatchNormalization, Conv1D, MaxPooling1D
+from tensorflow.keras.models import Sequential
+
 
 
 class CNNLSTMModel:

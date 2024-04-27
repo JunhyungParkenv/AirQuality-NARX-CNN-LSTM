@@ -285,10 +285,12 @@ def benchmark_algorithm(X_train, y_train, X_test, y_test, predictor_object,
     fit_end_predict_start = time.time()
     if predict_process is not None:
         y_test_out = y_test_out.reshape(-1)
+    # Adjusted call within benchmark_algorithm
     if predict_process is not None:
-        predicted = predict_process(predictor_object, X_test_out, y_test_out)
+        predicted = predict_process(predictor_object, X_test_out)
     else:
         predicted = predictor_object.predict(X_test_out)
+
     predict_end = time.time()
     mask = np.isnan(y_test_out) | np.isnan(predicted)
     predicted_masked, y_test_out_masked = predicted[~mask], y_test_out[~mask]

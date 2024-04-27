@@ -350,12 +350,10 @@ def fit_process(m, x, y):
     return res
 
 
-def predict_process(m, x, _, __):
-    if m is (hybrid_algorithms.CNNLSTMModel or hybrid_algorithms.LSTMModel):
-        predicted = m.predict(x, batch_size=batch_size)
-    else:
-        predicted = m.predict(x)
-
+def predict_process(model, X_test):
+    # You might need logic here to differentiate how prediction is done for different models
+    # For example, if using models that need different inputs or configurations
+    predicted = model.predict(X_test)
     return predicted
 
 
